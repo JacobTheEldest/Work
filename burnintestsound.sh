@@ -41,6 +41,7 @@ fi
 
 if [ $1 = repair ]; then
     cp ./wav/sax.wav /tmp/BurnInTest/Testsound.wav
+    cp ./wav/sax.wav /mnt/slax/rootcopy/root/sound.mp3
 fi
 
 if [ $1 = jesse ]; then
