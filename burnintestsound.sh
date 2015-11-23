@@ -24,7 +24,7 @@ if [ $1 = dj ]; then
 fi
 
 if [ $1 = tyler ]; then
-    cp ./wav/default.wav /tmp/BurnInTest/Testsound.wav
+    cp ./wav/showme.wav /tmp/BurnInTest/Testsound.wav
 fi
 
 if [ $1 = jordan ]; then
