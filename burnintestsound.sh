@@ -36,7 +36,7 @@ if [ $1 = john ]; then
 fi
 
 if [ $1 = sarah ]; then
-    cp ./wav/firepower.wav /tmp/BurnInTest/Testsound.wav
+    cp ./wav/basshead.wav /tmp/BurnInTest/Testsound.wav
 fi
 
 if [ $1 = repair ]; then
