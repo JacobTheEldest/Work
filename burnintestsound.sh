@@ -27,10 +27,6 @@ if [ $1 = tyler ]; then
     cp ./wav/showme.wav /tmp/BurnInTest/Testsound.wav
 fi
 
-if [ $1 = jordan ]; then
-    cp ./wav/chair.wav /tmp/BurnInTest/Testsound.wav
-fi
-
 if [ $1 = john ]; then
     cp ./wav/countryboy.wav /tmp/BurnInTest/Testsound.wav
 fi
@@ -42,10 +38,6 @@ fi
 if [ $1 = repair ]; then
     cp ./wav/sax.wav /tmp/BurnInTest/Testsound.wav
     cp ./wav/sax.wav /mnt/slax/rootcopy/root/sound.mp3
-fi
-
-if [ $1 = jesse ]; then
-    cp ./wav/default.wav /tmp/BurnInTest/Testsound.wav
 fi
 
 if [ $1 = james ]; then
