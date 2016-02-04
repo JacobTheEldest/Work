@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#! /usr/bin/python
 
 '''
 This scraper will pull info from NaderNet.
@@ -54,7 +54,7 @@ def main():
         print('   q.\tQuit')
 
         #Parse options
-        option = input('\n\t>>>')
+        option = input('\n>>>  ')
         if option == '1':
             retrieve_info()
 
@@ -242,7 +242,7 @@ def move_units():
     move_options = ['Cancel', 'Unit Disposition', 'Data Device Entry',
                     'System Test', 'System Repair', 'Add to Inventory',
                     'Scrap Teardown', 'System Teardown']
-    destination = move_options[int(input('\n\t>>>'))]
+    destination = move_options[int(input('\n>>>  '))]
 
     if destination == 'Cancel':
         exit
@@ -265,6 +265,7 @@ def move_units():
         #Handle output when the search returns an error
         if element_exists(error_id, 'id'):
             print('{} not found.'.format(line[:-1]))
+            output_file.write('{} not found.'.format(line[:-1]))
             continue
 
         #Give it time to load
@@ -279,6 +280,7 @@ def move_units():
         browser.find_element_by_xpath(current_disp_xpath).text
         if destination.lower() == browser.find_element_by_xpath(current_disp_xpath) and browser.find_element_by_xpath(completed_xpath).text.lower() != 'completed':
             print('{} is already in {}'.format(line[:-1], destination))
+            output_file.write('{} is already in {}'.format(line[:-1], destination))
             continue
         #Open menu, select destination, and click submit
         browser.find_element_by_id(change_disp_menu_id).click()
@@ -290,6 +292,7 @@ def move_units():
         #Handle output when the Item cannot be moved and returns an error
         if element_exists(error_id, 'id'):
             print('{} cannot be moved.'.format(line[:-1]))
+            output_file.write('{} cannot be moved.'.format(line[:-1]))
             continue
 
         print('Moved {} to {}'.format(line[:-1], destination))
