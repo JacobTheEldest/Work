@@ -32,8 +32,15 @@ def main():
         input_file = ask_filename('in')
         output_file = ask_filename('out')
     else:
-        input_file = open(sys.argv[1])
-        output_file = open('{}_results'.format(sys.argv[1]), 'w')
+        if sys.argv[1][0].lower() == 1 and len(sys.argv[1]) == 13:
+            temp_file = open('uid_temp', 'w')
+            temp_file.write('{}\n'.format(sys.argv[1]))
+            temp_file.close()
+            input_file = open('uid_temp')
+            output_file = open('cli_only_results', 'a')
+        else:
+            input_file = open(sys.argv[1])
+            output_file = open('{}_results'.format(sys.argv[1]), 'w')
 
     #Get destination department
     move_options = ['cancel', 'unit disposition', 'data device entry',
@@ -130,6 +137,8 @@ def main():
     input_file.close()
     output_file.close()
     browser.quit()
+    if os.path.isfile('uid_temp'):
+        os.remove('uid_temp')
 
 #Ask for input filename
 def ask_filename(type='in'):
