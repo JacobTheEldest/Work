@@ -2,3 +2,4 @@
 *results
 *login
 __pycache__/
+*.csv
