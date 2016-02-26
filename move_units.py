@@ -32,7 +32,7 @@ def main():
         input_file = ask_filename('in')
         output_file = ask_filename('out')
     else:
-        if sys.argv[1][0].lower() == 1 and len(sys.argv[1]) == 13:
+        if sys.argv[1][0].lower() == 'm' and len(sys.argv[1]) == 13:
             temp_file = open('uid_temp', 'w')
             temp_file.write('{}\n'.format(sys.argv[1]))
             temp_file.close()
